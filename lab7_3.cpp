@@ -3,27 +3,15 @@
 using namespace std;
 
  int adiff(int x ,int y ){
-  while ( x >= 360 )
-    {
-      x -= 360 ;
-    }
-
-  while ( y >= 360 )
-    {
-      y -= 360 ;
-    }
-
-
-int c = x-y ;
+    int c = x-y ;
     if( c < 0 ){
       c = c*-1 ;
     }
-    while ( c > 180 )
-    {
+    c = c%360 ;
+    if ( c > 180){
       c = 360 - c ;
     }
-    
-return c ;
+  return c ;
  }
 
 
@@ -42,6 +30,6 @@ int main(){
 
   cout << adiff(1000,280)<< "\n";
 
-  cout << adiff(60,244)<< "\n";
+  cout << adiff(-359,-360)<< "\n";
 
 }
